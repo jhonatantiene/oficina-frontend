@@ -1,0 +1,69 @@
+.body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background: url('../../assets/fundo.png');
+    background-size: cover;
+  }
+  
+  .container {
+    height: 90%;
+    width: 70%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 20px;
+    overflow: auto;
+    margin: auto;
+  }
+  
+  .divTableHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10%;
+  }
+  
+  .divTable {
+    width: 100%;
+    height: 90%;
+    overflow: auto;
+  }
+  
+  table {
+    max-height: 100%;
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+
+  table th {
+    padding: 10px;
+    font-size: larger;
+  }
+  
+  table td {
+    border: 1px solid gray;
+    padding: 5px;
+    font-size: larger;
+  }
+  
+  table #edit {
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+  }
+  
+  table #edit:hover {
+    background-color: gray;
+  }
+  
+  table #delete {
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+  }
+  
+  table #delete:hover {
+    background-color: gray;
+  }

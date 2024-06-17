@@ -1,0 +1,60 @@
+<app-sidenav>
+  <div class="body">
+    <div class="container">
+
+      <mat-tab-group mat-stretch-tabs="true" mat-align-tabs="center">
+        <mat-tab label="Total de vendas">
+
+          <div class="year-select-container">
+            <mat-form-field appearance="fill">
+              <mat-label>Selecione o ano:</mat-label>
+              <mat-select [(value)]="anoSelecionado" (selectionChange)="onYearChange()">
+                @for (ano of anosDisponiveis; track anosDisponiveis) {
+                  <mat-option [value]="ano">
+                    {{ ano }}
+                  </mat-option>
+                }
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="button-container">
+            <button mat-raised-button color="primary" (click)="openDialog()">
+              Adicionar venda
+            </button>
+          </div>
+
+          <div class="chart-container">
+            <canvas id="myChart" width="auto" height="auto"></canvas>
+          </div>
+        </mat-tab>
+        <mat-tab label="Produtos Mais Vendidos">
+          <!-- Seção para exibir os produtos mais vendidos -->
+          <div class="most-sold-container">
+
+            @if(produtosMaisVendidos.length > 0) {
+              <ng-container >
+                <h2>Produtos Mais Vendidos</h2>
+                <ul class="most-sold-list">
+                  @for (produto of produtosMaisVendidos; track produtosMaisVendidos) {
+                    <li class="most-sold-item">
+                      {{ produto.nome }} - Quantidade Vendida: {{ produto.quantidade }}
+                    </li>
+                  }
+                </ul>
+              </ng-container>
+            }
+            
+            @if(produtosMaisVendidos.length === 0) {
+              <p>Nenhum dado disponível sobre os produtos mais vendidos.</p>
+            }
+
+            <ng-template #noData>
+              <p class="no-data-message">Nenhum dado disponível sobre os produtos mais vendidos.</p>
+            </ng-template>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</app-sidenav>

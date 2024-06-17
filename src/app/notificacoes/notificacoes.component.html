@@ -1,0 +1,39 @@
+<app-sidenav>
+    <div class="body">
+  
+        <div class="container">
+          <div class="divTableHeader">
+            <h1>Central de notificações</h1>
+          </div>
+      
+          <div class="divTable">
+            <table>
+              <thead>
+                @if(notificacoes.length > 0) {
+                    <tr>
+                        <th>Alertas</th>
+                      </tr>
+                }
+              </thead>
+      
+              <tbody>
+                
+                    @if(notificacoes.length === 0 ) {
+                        <tr>
+                            <td style="background-color: rgba(49, 223, 49, 0.767);">{{'Tudo certo!! Você não possue notificações no momento.'}}</td>
+                        </tr>
+                    } @else {
+                        @for(notification of notificacoes; track notificacoes) {
+                        <tr>
+                            <td>{{notification}}</td>
+                        </tr>
+                    }
+                }
+
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+</app-sidenav>

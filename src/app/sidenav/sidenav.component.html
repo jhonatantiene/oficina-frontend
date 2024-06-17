@@ -1,0 +1,53 @@
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side" opened="true" opened="true">
+    <div class="div1">
+      <div>
+        <button
+          mat-fab
+          style="text-align: center; background-color: white"
+          routerLink="/clientes"
+        >
+          <img src="./../../assets/clientes.png" width="70%" />
+        </button>
+        <span>Clientes</span>
+      </div>
+
+      <div>
+        <button
+          mat-fab
+          style="text-align: center; background-color: white"
+          routerLink="/vendas"
+        >
+          <img src="./../../assets/vendas.png" width="70%" />
+        </button>
+        <span>Vendas</span>
+      </div>
+
+      <div>
+        <button
+          mat-fab
+          style="text-align: center; background-color: white"
+          routerLink="/estoque"
+        >
+          <img src="./../../assets/estoque.png" width="70%" />
+        </button>
+        <span>Estoque</span>
+      </div>
+
+      <div>
+        <button
+          mat-fab
+          style="text-align: center; background-color: white"
+          routerLink="/notificacoes"
+        >
+          <img src="./../../assets/alert.png" width="70%" />
+        </button>
+      </div>
+    </div>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <button type="button" mat-button (click)="drawer.toggle()" style="text-align: center;"><img src="./../../assets/voltar.png"></button>
+  </div>
+  <ng-content></ng-content>
+</mat-drawer-container>

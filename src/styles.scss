@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+
+body,
+html {
+  width: 100%;
+  height: 100%; 
+  margin: 0;
+  padding: 0;
+}
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// app-sidenav {
+//   height: 100%;
+//   width: 100px;
+//   background-color: rgba(255, 193, 60, 0.966);
+// }
+
+// app-sidenav .example-container  {
+//   display: flex;
+//   flex-direction: column;
+//   height: 100%;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// app-sidenav .example-container .example-sidenav-content {
+//   gap: 10px;
+// }
+
+// app-sidenav .example-container .example-sidenav-content span {
+//   font-weight: 500;
+//   font-size: larger;
+// }

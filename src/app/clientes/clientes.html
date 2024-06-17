@@ -1,0 +1,41 @@
+
+<app-sidenav>
+  <div class="body">
+    <div class="container">
+      <h1 style="text-align: center">Cadastro de clientes</h1>
+      <button mat-flat-button color="primary" (click)="openDialog({}, 1)">Novo</button>
+  
+      <div class="divTable">
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Telefone</th>
+              <th>Telefone2</th>
+              <th>Endereço</th>
+            </tr>
+          </thead>
+  
+          <tbody>
+            @for(cliente of clientes; track cliente) {
+            <tr style="text-align: center;">
+              <td>{{cliente.nome}}</td>
+              <td>{{cliente.telefone}}</td>
+              <td>{{cliente.telefone2}}</td>
+              <td>{{cliente.endereco}}</td>
+              <td id="edit" (click)="openDialog(cliente, 2)">
+                <img src="../../assets/editar.png" width="28px" height="28px" />
+              </td>
+              <td id="delete" (click)="deletar(cliente.id)">
+                <img src="../../assets/lixeira.png" width="28px" height="28px">
+              </td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</app-sidenav>
+
+

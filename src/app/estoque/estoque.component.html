@@ -1,0 +1,49 @@
+
+<app-sidenav>
+  <div class="body">
+  
+    <div class="container">
+      <div class="divTableHeader">
+        <h2>Cadastro de peças</h2>
+        <button mat-flat-button color="primary" (click)="openDialog({},1)">
+          Incluir
+        </button>
+      </div>
+  
+      <div class="divTable">
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Modelo</th>
+              <th>data da compra</th>
+              <th>preço da peça</th>
+              <th>Quantidade</th>
+              <th>Alerta de estoque</th>
+            </tr>
+          </thead>
+  
+          <tbody>
+            @for(peca of pecas; track peca) {
+            <tr style="text-align: center;">
+              <td>{{peca.nome_peca}}</td>
+              <td>{{peca.modelo}}</td>
+              <td>{{peca.data_compra}}</td>
+              <td>{{peca.preco_peca}}</td>
+              <td>{{peca.qtd}}</td>
+              <td>{{peca.alert_estoque}}</td>
+              <td id="edit" (click)="openDialog(peca, 2)">
+                <img src="../../assets/editar.png" width="28px" height="28px" />
+              </td>
+              <td id="delete" (click)="deletar(peca.id)">
+                <img src="../../assets/lixeira.png" width="28px" height="28px">
+              </td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</app-sidenav>
+

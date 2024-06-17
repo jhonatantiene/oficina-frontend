@@ -1,0 +1,43 @@
+
+<div class="container" [formGroup]="form">
+    <mat-form-field>
+        <mat-label>Nome</mat-label>
+        <input matInput type="text" formControlName="nome_peca">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Modelo</mat-label>
+        <input matInput type="text"formControlName="modelo">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>data da compra</mat-label>
+        <input matInput type="text" formControlName="data_compra">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Preço da peça</mat-label>
+        <input matInput type="text" formControlName="preco_peca">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Quantidade</mat-label>
+        <input matInput type="text" formControlName="qtd">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Alerta estoque</mat-label>
+        <input matInput type="number" formControlName="alert_estoque">
+    </mat-form-field>
+
+    @if(this.data.tipo === 1) {
+        <div style="text-align: center;">
+            <button mat-raised-button color="primary" [disabled]="form.invalid" (click)="cadastrar()">Cadastrar</button>
+        </div>
+    } @else {
+        <div style="text-align: center;">
+            <button mat-raised-button color="primary" [disabled]="form.invalid" (click)="editar()">Editar</button>
+        </div>
+    }
+
+</div>
